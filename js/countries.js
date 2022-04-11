@@ -11,11 +11,33 @@ const displayCountries = countries => {
     countriesContainar.innerHTML = allCountries.join(' ');
 }
 
-const getCountriesHtml = country => {
+// option-1
+/* const getCountriesHtml = (country) => {
     return `
         <div class="country">
             <h2>${country.name.common}</h2>
             <img src="${country.flags.png}">
+        </div>
+    `
+} */
+
+// option-2
+/* const getCountriesHtml = (country) => {
+    const { name, flags } = country
+    return `
+        <div class="country">
+            <h2>${name.common}</h2>
+            <img src="${flags.png}">
+        </div>
+    `
+} */
+
+// option-3 
+const getCountriesHtml = ({name, flags}) => {
+    return `
+        <div class="country">
+            <h2>${name.common}</h2>
+            <img src="${flags.png}">
         </div>
     `
 }
